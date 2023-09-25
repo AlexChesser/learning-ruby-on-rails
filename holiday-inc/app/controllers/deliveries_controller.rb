@@ -25,7 +25,6 @@ class DeliveriesController < ApplicationController
       @delivery.assigned_to_id = user.id
     end
 
-
     if @delivery.save
       render json: @delivery, status: :created, location: @delivery
     else
