@@ -17,6 +17,15 @@ class DeliveriesController < ApplicationController
   def create
     @delivery = Delivery.new(delivery_params)
 
+    if @delivery.assigned_to_id == nil
+      user = User.where(
+        :country_id => @delivery.destination_id,
+        :role_id => 2
+      ).first
+      @delivery.assigned_to_id = user.id
+    end
+
+
     if @delivery.save
       render json: @delivery, status: :created, location: @delivery
     else

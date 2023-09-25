@@ -1,0 +1,8 @@
+{ "delivery": {
+        "manifest":"happy day!"
+        ,"delivery_date":"2020-06-06T03:00:00.000Z"
+        ,"customer_id":7
+        ,"destination_id":2
+        ,"is_complete":false
+    }
+}
