@@ -15,3 +15,9 @@ Locale.create!([
     {code:"en", description:"English"},
     {code:"fr", description:"French"}
 ])
+
+Country.create!([
+    {code:"CAN", description:"Canada"},
+    {code:"USA", description:"United States of America"},
+    {code:"MEX", description:"Mexico"}
+])
