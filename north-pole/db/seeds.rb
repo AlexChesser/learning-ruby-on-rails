@@ -17,7 +17,7 @@ Locale.create!([
 ])
 
 Country.create!([
-    {code:"CAN", description:"Canada"},
-    {code:"USA", description:"United States of America"},
-    {code:"MEX", description:"Mexico"}
+    {code:"CAN", name:"Canada"},
+    {code:"USA", name:"United States of America"},
+    {code:"MEX", name:"Mexico"}
 ])
