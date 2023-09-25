@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @locale %>
+
+<div>
+  <%= link_to "Edit this locale", edit_locale_path(@locale) %> |
+  <%= link_to "Back to locales", locales_path %>
+
+  <%= button_to "Destroy this locale", @locale, method: :delete %>
+</div>

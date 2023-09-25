@@ -10,3 +10,8 @@ Role.create!([
     {name:"admin"},
     {name:"elfployee"}
 ])
+
+Locale.create!([
+    {code:"en", description:"English"},
+    {code:"fr", description:"French"}
+])
