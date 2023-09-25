@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :deliveries
   resources :users
   resources :countries
   resources :locales

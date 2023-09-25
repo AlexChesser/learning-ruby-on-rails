@@ -68,3 +68,11 @@ User.create!([
         country_id: 5, role_id: 3, locale_id: 1
     }
 ])
+
+Delivery.delete_all
+reset_table_autoincrement "deliveries"
+Delivery.create!([
+    { manifest: "happy day!", delivery_date: "06/06/1975 08:00:00.000+0500", customer_id: 7, assigned_to_id: 2, destination_id: 1, is_complete: 1 }
+])
+
+
