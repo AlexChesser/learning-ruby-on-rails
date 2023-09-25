@@ -1,16 +1,24 @@
+# require "./app/models/serializers/user/user_assigned_deliveries.rb"
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
+  before_action :set_user, only: %i[ show show_deliveries update destroy ]
 
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
   # GET /users/1
   def show
     render json: @user
+  end
+
+  #GET /users/1/deliveries
+  def show_deliveries
+    render json: @user, include: [
+      :assigned => { :include => [ :destination, :customer ] },
+      :shipped => { :include => [ :destination, :assigned_to ] }
+    ]
   end
 
   # POST /users
