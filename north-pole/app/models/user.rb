@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_one :Locale
-    has_one :Country
-    has_one :Role
+    belongs_to :locale
+    belongs_to :country
+    belongs_to :role
 end
