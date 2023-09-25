@@ -14,7 +14,8 @@ Role.delete_all
 reset_table_autoincrement "roles"
 Role.create!([
     {name:"admin"},
-    {name:"elfployee"}
+    {name:"elfployee"},
+    {name:"customer"},
 ])
 
 Locale.delete_all
@@ -61,5 +62,9 @@ User.create!([
     {
         login: "e5", name: "Elf Spain", email: "spain@northpole.com",
         country_id: 5, role_id: 2, locale_id: 3
+    },
+    {
+        login: "c1", name: "Easter Bunny", email: "bige@bunny.com",
+        country_id: 5, role_id: 3, locale_id: 1
     }
 ])
