@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "koichisasada.vscode-rdbg"
+  ],
+  "unwantedRecommendations": ["rebornix.ruby", "wingrunr21.vscode-ruby"]
+}
