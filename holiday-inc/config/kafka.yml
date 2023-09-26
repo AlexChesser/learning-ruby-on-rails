@@ -1,0 +1,38 @@
+default: &default
+  bootstrap_servers: b-1.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+  security_protocol: SASL_SSL
+  sasl_username: username-with-access-to-consumer-group
+  sasl_password: corresponding-password
+  sasl_mechanisms: SCRAM-SHA-512
+  client_id: client-id-specified-with-consumer-group
+
+development:
+  <<: *default
+  bootstrap_servers:
+    - b-1.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+    - b-2.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+    - b-3.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+  schema_registry: http://staging-echo-101:8000
+  kafka_ui: http://staging-echo-102:9000
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+  bootstrap_servers:
+    - b-1.echononprod.t0pdea.c19.kafka.us-east-1.amazonaws.com:9096
+    - b-2.echononprod.t0pdea.c19.kafka.us-east-1.amazonaws.com:9096
+    - b-3.echononprod.t0pdea.c19.kafka.us-east-1.amazonaws.com:9096
+  schema_registry: https://schema-registry-staging.justworks.tools
+  kafka_ui: https://echo.nonprod.vibe.justworks.com
+
+production:
+  <<: *default
+  bootstrap_servers:
+    - b-1.echoprod.svocuy.c12.kafka.us-east-1.amazonaws.com:9096
+    - b-2.echoprod.svocuy.c12.kafka.us-east-1.amazonaws.com:9096
+    - b-3.echoprod.svocuy.c12.kafka.us-east-1.amazonaws.com:9096
+  schema_registry: https://schema-registry-prod.justworks.tools
+  kafka_ui: https://echo.prod.vibe.justworks.com
+
