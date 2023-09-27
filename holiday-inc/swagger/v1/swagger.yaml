@@ -1,20 +1,78 @@
 ---
-openapi: 3.0.1
+swagger: '2.0'
 info:
   title: API V1
   version: v1
 paths:
+  "/deliveries":
+    get:
+      summary: reads available deliveries
+      tags:
+      - Deliveries
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      responses:
+        '200':
+          description: found delivery
+    post:
+      summary: Create new article
+      tags:
+      - Deliveries
+      parameters:
+      - name: delivery
+        in: body
+        schema:
+          type: object
+          properties:
+            manifest:
+              type: string
+            delivery_date:
+              type: string
+              format: datetime
+            customer_id:
+              type: integer
+            assigned_to_id:
+              type: integer
+            destination_id:
+              type: integer
+            is_complete:
+              type: boolean
+          required:
+          - manifest
+          - delivery_date
+          - customer_id
+          - destination_id
+      responses:
+        '201':
+          description: created
   "/roles":
     get:
       summary: reads available roles
       tags:
       - Roles
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      responses:
+        '200':
+          description: blog found
+  "/roles/{id}":
+    get:
+      summary: reads available roles
+      tags:
+      - Roles
+      produces:
+      - application/json
+      consumes:
+      - application/json
       parameters:
       - name: id
         in: path
+        type: string
         required: true
-        schema:
-          type: string
       responses:
         '200':
           description: blog found
