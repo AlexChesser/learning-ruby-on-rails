@@ -1,10 +1,13 @@
 default: &default
-  bootstrap_servers: b-1.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
-  security_protocol: SASL_SSL
-  sasl_username: username-with-access-to-consumer-group
-  sasl_password: corresponding-password
-  sasl_mechanisms: SCRAM-SHA-512
-  client_id: client-id-specified-with-consumer-group
+  bootstrap_servers:
+    - b-1.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+    - b-2.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+    - b-3.echodev.tf55jh.c2.kafka.us-east-1.amazonaws.com:9096
+  client_id: chesser_development
+  sasl_username: sasl_username
+  sasl_password: sasl_password
+  default_consumer_group: chesser_development_consumer_group
+  default_topic: development.partner_integrations.test
 
 development:
   <<: *default

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_25_201339) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_180249) do
   create_table "countries", force: :cascade do |t|
     t.string "code"
     t.string "name"
@@ -25,6 +25,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_201339) do
     t.integer "assigned_to_id"
     t.integer "destination_id"
     t.boolean "is_complete"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "payload"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
